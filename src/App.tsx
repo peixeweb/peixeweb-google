@@ -536,7 +536,7 @@ export default function App() {
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
                 <div>
                   <p className="text-xs font-semibold text-black">
-                    Tráfego Pago · {STORE_INFO.numberLabel}
+                    Tráfego Pago
                   </p>
                   <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mt-1">
                     Especialista em Meta Ads e Google Ads e Inteligência Artificial
@@ -621,8 +621,9 @@ export default function App() {
       <footer className="bg-white border-t border-slate-200 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <p>
-            {STORE_INFO.fullName} · {STORE_INFO.numberLabel} ·{' '}
-            {STORE_INFO.cityLabel}
+            {[STORE_INFO.fullName, STORE_INFO.numberLabel, STORE_INFO.cityLabel]
+              .filter(Boolean)
+              .join(' · ')}
           </p>
 
           <div className="flex flex-wrap items-center gap-4">

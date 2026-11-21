@@ -28,7 +28,8 @@ export const STORE_INFO = {
   segment: 'Tráfego Pago',
   cityLabel: '',
   position: {lat: -5.1440677, lng: -42.7866605} as LatLngPoint,
-  mapsShareUrl: '',
+  mapsShareUrl:
+    'https://www.google.com/maps/search/?api=1&query=-5.1440677,-42.7866605',
   photoUrl: etImage,
   whatsappNumber: '11914716715',
   whatsappDisplay: '11 91471-6715',
@@ -52,14 +53,31 @@ export const TRAVEL_MODE_LABELS: Record<TravelModeOption, string> = {
 };
 
 export function getWhatsAppUrl(customMessage?: string): string {
-  return '#';
+  const text =
+    customMessage ??
+    'Olá! Vim pelo site da Peixeweb e quero saber mais sobre tráfego pago.';
+  return `https://wa.me/55${STORE_INFO.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }
+
+const GOOGLE_TRAVEL_MODES: Record<TravelModeOption, string> = {
+  DRIVING: 'driving',
+  TWO_WHEELER: 'two-wheeler',
+  WALKING: 'walking',
+};
 
 export function getGoogleMapsDirectionsUrl(
   origin?: LatLngPoint | null,
   travelMode: TravelModeOption = 'DRIVING',
 ): string {
-  return '#';
+  const params = new URLSearchParams({
+    api: '1',
+    destination: `${STORE_INFO.position.lat},${STORE_INFO.position.lng}`,
+    travelmode: GOOGLE_TRAVEL_MODES[travelMode],
+  });
+  if (origin) {
+    params.set('origin', `${origin.lat},${origin.lng}`);
+  }
+  return `https://www.google.com/maps/dir/?${params.toString()}`;
 }
 
 export function formatDistancePt(meters: number): string {

@@ -590,8 +590,9 @@ export default function App() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
-                  <p className="text-xs font-semibold text-amber-300 whitespace-nowrap">
-                    Peixeweb - Agência de Tráfego &amp; Engenharia de Lucro
+                  <p className="text-xs font-semibold text-amber-300 max-w-xs">
+                    Peixeweb - Agência de Tráfego &amp; Engenharia de Lucro e
+                    Inteligência Artificial
                   </p>
                   <a
                     href={getWhatsAppUrl()}

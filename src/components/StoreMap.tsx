@@ -213,7 +213,7 @@ export function StoreMap({
                   {STORE_INFO.fullName}
                 </h3>
                 <p className="text-xs text-slate-600 mt-0.5">
-                  Nº {STORE_INFO.numberLabel} · {STORE_INFO.cityLabel} ·{' '}
+                  Nº 01 · {STORE_INFO.cityLabel} ·{' '}
                   {STORE_INFO.segment}
                 </p>
 

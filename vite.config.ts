@@ -14,7 +14,8 @@ export default defineConfig(({mode}) => {
     '';
 
   return {
-    base: '/',
+    // No GitHub Pages o site fica em /peixeweb-google/ (definido pelo workflow).
+    base: process.env.VITE_BASE || '/',
     define: {
       'import.meta.env.VITE_GOOGLE_MAPS_API_KEY': JSON.stringify(mapsApiKey),
     },

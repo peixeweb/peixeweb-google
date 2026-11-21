@@ -23,7 +23,8 @@ export interface ComputedRouteSummary {
 
 export const STORE_INFO = {
   shortName: 'Peixeweb',
-  fullName: 'Peixeweb - Agência de Tráfego & Engenharia de Lucro',
+  fullName:
+    'Peixeweb - Agência de Tráfego & Engenharia de Lucro e Inteligência Artificial',
   numberLabel: '',
   segment: 'Tráfego Pago',
   cityLabel: '',

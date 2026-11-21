@@ -74,7 +74,7 @@ function MapToolbarControls({
         className="min-h-[40px] px-3 py-2 bg-white/95 backdrop-blur-sm text-slate-800 border border-slate-200 rounded-xl shadow-sm text-xs font-medium flex items-center gap-1.5 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 transition-colors cursor-pointer whitespace-nowrap shrink-0"
       >
         <Crosshair className="w-3.5 h-3.5 text-black" aria-hidden="true" />
-        <span>Centralizar loja</span>
+        <span>Centralizar Peixeweb</span>
       </button>
     </div>
   );

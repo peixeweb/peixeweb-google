@@ -240,7 +240,7 @@ export default function App() {
                     </h1>
 
                     <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-                      Trace sua rota até a loja diretamente no Google Maps ou
+                      Trace sua rota até a Peixeweb diretamente no Google Maps ou
                       fale agora com nossa equipe pelo WhatsApp.
                     </p>
 

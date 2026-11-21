@@ -102,13 +102,13 @@ export function OriginAutocomplete({
               ? `Partida: ${selectedLabel}`
               : 'Digite seu endereço ou ponto de partida...'
           }
-          className="w-full min-h-[44px] pl-10 pr-10 py-2.5 text-sm bg-white border border-slate-300 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+          className="w-full min-h-[44px] pl-10 pr-10 py-2.5 text-sm bg-white border border-slate-300 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-gray-800 transition-colors"
           autoComplete="off"
         />
 
         {isLoading ? (
           <Loader2
-            className="w-4 h-4 text-blue-600 animate-spin absolute right-3.5"
+            className="w-4 h-4 text-black animate-spin absolute right-3.5"
             aria-label="Buscando endereços"
           />
         ) : (
@@ -150,13 +150,13 @@ export function OriginAutocomplete({
                   type="button"
                   disabled={selectingIndex !== null}
                   onClick={() => void handleSelect(suggestion, index)}
-                  className="w-full text-left px-3.5 py-2.5 min-h-[44px] flex items-start gap-2.5 text-sm text-slate-800 hover:bg-blue-50 focus-visible:bg-blue-50 focus-visible:outline-none transition-colors cursor-pointer"
+                  className="w-full text-left px-3.5 py-2.5 min-h-[44px] flex items-start gap-2.5 text-sm text-slate-800 hover:bg-gray-50 focus-visible:bg-gray-50 focus-visible:outline-none transition-colors cursor-pointer"
                 >
                   {selectingIndex === index ? (
-                    <Loader2 className="w-4 h-4 text-blue-600 animate-spin shrink-0 mt-0.5" />
+                    <Loader2 className="w-4 h-4 text-black animate-spin shrink-0 mt-0.5" />
                   ) : (
                     <MapPin
-                      className="w-4 h-4 text-blue-600 shrink-0 mt-0.5"
+                      className="w-4 h-4 text-black shrink-0 mt-0.5"
                       aria-hidden="true"
                     />
                   )}
@@ -170,3 +170,4 @@ export function OriginAutocomplete({
     </div>
   );
 }
+

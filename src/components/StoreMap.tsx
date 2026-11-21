@@ -64,7 +64,7 @@ function MapToolbarControls({
         onClick={onToggleMapType}
         className="min-h-[40px] px-3 py-2 bg-white/95 backdrop-blur-sm text-slate-800 border border-slate-200 rounded-xl shadow-sm text-xs font-medium flex items-center gap-1.5 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 transition-colors cursor-pointer whitespace-nowrap shrink-0"
       >
-        <Layers className="w-3.5 h-3.5 text-blue-600" aria-hidden="true" />
+        <Layers className="w-3.5 h-3.5 text-black" aria-hidden="true" />
         <span>{mapTypeId === 'roadmap' ? 'Satélite' : 'Mapa'}</span>
       </button>
 
@@ -73,7 +73,7 @@ function MapToolbarControls({
         onClick={handleRecenter}
         className="min-h-[40px] px-3 py-2 bg-white/95 backdrop-blur-sm text-slate-800 border border-slate-200 rounded-xl shadow-sm text-xs font-medium flex items-center gap-1.5 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 transition-colors cursor-pointer whitespace-nowrap shrink-0"
       >
-        <Crosshair className="w-3.5 h-3.5 text-blue-600" aria-hidden="true" />
+        <Crosshair className="w-3.5 h-3.5 text-black" aria-hidden="true" />
         <span>Centralizar loja</span>
       </button>
     </div>
@@ -115,7 +115,7 @@ export function StoreMap({
   return (
     <div className="relative w-full h-[460px] lg:h-[700px] rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm">
       {isPickingOriginOnMap && (
-        <div className="absolute top-3 left-3 right-3 sm:right-auto z-20 bg-blue-700 text-white px-3.5 py-2 rounded-xl shadow-md text-xs font-medium flex items-center gap-2">
+        <div className="absolute top-3 left-3 right-3 sm:right-auto z-20 bg-black text-white px-3.5 py-2 rounded-xl shadow-md text-xs font-medium flex items-center gap-2">
           <MapPin className="w-4 h-4 text-amber-300 shrink-0" aria-hidden="true" />
           <span>Clique em qualquer ponto do mapa para definir sua partida</span>
         </div>
@@ -123,7 +123,7 @@ export function StoreMap({
 
       {hasApiError ? (
         <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-slate-100">
-          <MapPin className="w-10 h-10 text-blue-600 mb-3" aria-hidden="true" />
+          <MapPin className="w-10 h-10 text-black mb-3" aria-hidden="true" />
           <p className="font-display font-bold text-slate-900 text-lg">
             Mapa interativo indisponível no momento
           </p>
@@ -135,7 +135,7 @@ export function StoreMap({
             href={getGoogleMapsDirectionsUrl(origin, travelMode)}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-h-[44px] px-5 py-2.5 bg-blue-700 text-white rounded-xl text-sm font-semibold inline-flex items-center gap-2 hover:bg-blue-800 transition-colors"
+            className="min-h-[44px] px-5 py-2.5 bg-black text-white rounded-xl text-sm font-semibold inline-flex items-center gap-2 hover:bg-gray-800 transition-colors"
           >
             <Navigation className="w-4 h-4" aria-hidden="true" />
             <span>Abrir rota no Google Maps</span>
@@ -175,8 +175,8 @@ export function StoreMap({
             onClick={() => setInfoWindowOpen((prev) => !prev)}
           >
             <div className="flex flex-col items-center cursor-pointer group select-none">
-              <div className="bg-white p-1.5 rounded-2xl shadow-lg border-2 border-blue-700 group-hover:scale-105 transition-transform duration-150">
-                <div className="w-20 h-20 rounded-xl overflow-hidden bg-blue-800 relative">
+              <div className="bg-white p-1.5 rounded-2xl shadow-lg border-2 border-black group-hover:scale-105 transition-transform duration-150">
+                <div className="w-20 h-20 rounded-xl overflow-hidden bg-black relative">
                   <StoreFacadeImage
                     className="w-full h-full object-cover"
                     alt="Foto da fachada da Conduta Autopeças no mapa"
@@ -186,8 +186,8 @@ export function StoreMap({
                   <p className="font-display font-bold text-[11px] leading-tight text-slate-900 whitespace-nowrap">
                     {STORE_INFO.shortName}
                   </p>
-                  <p className="text-[10px] font-semibold text-blue-700 leading-tight whitespace-nowrap">
-                    Loja {STORE_INFO.numberLabel}
+                  <p className="text-[10px] font-semibold text-black leading-tight whitespace-nowrap">
+                    {STORE_INFO.numberLabel}
                   </p>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export function StoreMap({
               maxWidth={290}
             >
               <div className="p-1 font-sans text-slate-900">
-                <div className="w-full h-32 rounded-lg overflow-hidden mb-2.5 bg-blue-800">
+                <div className="w-full h-32 rounded-lg overflow-hidden mb-2.5 bg-black">
                   <StoreFacadeImage
                     className="w-full h-full object-cover"
                     alt="Fachada da Conduta Locações, Autopeças e Manutenções"
@@ -224,10 +224,10 @@ export function StoreMap({
                       setInfoWindowOpen(false);
                       onRequestGpsRoute();
                     }}
-                    className="w-full min-h-[40px] px-3 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                    className="w-full min-h-[40px] px-3 py-2 bg-black hover:bg-gray-800 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <Navigation className="w-3.5 h-3.5" aria-hidden="true" />
-                    <span>Como chegar na loja Conduta</span>
+                    <span>Como chegar na Peixeweb</span>
                   </button>
 
                   <div className="grid grid-cols-2 gap-1.5">
@@ -235,7 +235,7 @@ export function StoreMap({
                       href={getWhatsAppUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="min-h-[38px] px-2.5 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
+                      className="min-h-[38px] px-2.5 py-1.5 bg-black hover:bg-gray-800 text-white rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
                     >
                       <MessageCircle
                         className="w-3.5 h-3.5 shrink-0"
@@ -299,3 +299,4 @@ export function StoreMap({
     </div>
   );
 }
+

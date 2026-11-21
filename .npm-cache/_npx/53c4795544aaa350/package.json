@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@supabase/mcp-server-supabase": "^0.18.0"
+  },
+  "_npx": {
+    "packages": [
+      "@supabase/mcp-server-supabase@latest"
+    ]
+  }
+}

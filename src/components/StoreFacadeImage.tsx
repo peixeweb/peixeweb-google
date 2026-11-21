@@ -9,14 +9,14 @@ interface StoreFacadeImageProps {
 
 export function StoreFacadeImage({
   className = 'w-full h-full object-cover',
-  alt = 'Fachada da Conduta — Locações, Autopeças e Manutenções, Linha Diesel — Número 2948C',
+  alt = 'Logo Peixeweb',
 }: StoreFacadeImageProps) {
   const [hasError, setHasError] = useState(false);
 
   if (hasError) {
     return (
       <div
-        className={`flex flex-col items-center justify-center bg-gradient-to-br from-blue-700 to-blue-900 text-white p-6 text-center ${className}`}
+        className={`flex flex-col items-center justify-center bg-white text-slate-900 p-6 text-center ${className}`}
         role="img"
         aria-label={alt}
       >
@@ -24,7 +24,7 @@ export function StoreFacadeImage({
         <p className="font-display font-bold text-lg leading-tight">
           {STORE_INFO.shortName}
         </p>
-        <p className="text-xs text-blue-100 mt-1">
+        <p className="text-xs text-gray-100 mt-1">
           {STORE_INFO.numberLabel} · {STORE_INFO.segment}
         </p>
       </div>
@@ -41,3 +41,4 @@ export function StoreFacadeImage({
     />
   );
 }
+

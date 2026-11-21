@@ -11,11 +11,11 @@ import {
   MessageCircle,
   Navigation,
   Route as RouteIcon,
-  Wrench,
 } from 'lucide-react';
 import {OriginAutocomplete} from './components/OriginAutocomplete';
 import {StoreFacadeImage} from './components/StoreFacadeImage';
 import {StoreMap} from './components/StoreMap';
+import etImage from '../et.png';
 import {
   ComputedRouteSummary,
   LatLngPoint,
@@ -150,7 +150,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
           <a
             href="#localizacao"
-            className="font-display text-lg font-extrabold tracking-tight text-blue-800 whitespace-nowrap shrink-0"
+            className="font-display text-lg font-extrabold tracking-tight text-black whitespace-nowrap shrink-0"
           >
             {STORE_INFO.shortName}
           </a>
@@ -183,17 +183,26 @@ export default function App() {
             >
               Contato
             </a>
+            <a
+              href="https://vendas-pela-internet.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-h-[40px] px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors whitespace-nowrap shrink-0 flex items-center gap-2 cursor-pointer"
+            >
+              <img src={etImage} alt="Peixeweb" className="w-4 h-4 shrink-0" />
+              <span>Vendas Pela Internet</span>
+            </a>
           </nav>
 
           <div className="flex items-center shrink-0">
             <button
               type="button"
               onClick={handleHowToGetThereClick}
-              className="min-h-[40px] px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-xl transition-colors whitespace-nowrap shrink-0 flex items-center gap-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+              className="min-h-[40px] px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-black hover:bg-gray-800 rounded-xl transition-colors whitespace-nowrap shrink-0 flex items-center gap-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
             >
               <Navigation className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span className="hidden sm:inline">
-                Como chegar na loja Conduta
+                Como chegar na Peixeweb
               </span>
               <span className="sm:hidden">Como chegar</span>
             </button>
@@ -218,22 +227,14 @@ export default function App() {
               {/* Left Column: Store Identity, Primary CTAs & Route Planner */}
               <div className="lg:col-span-5 flex flex-col gap-5">
                 <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
-                  <div className="aspect-[16/10] w-full bg-blue-800 relative overflow-hidden">
+                  <div className="aspect-[16/10] w-full bg-black relative overflow-hidden">
                     <StoreFacadeImage
-                      className="w-full h-full object-cover"
-                      alt="Fachada da Conduta Locações, Autopeças e Manutenções — 2948C"
+                      className="w-full h-full object-contain mx-auto"
+                      alt="Fachada da Conduta"
                     />
                   </div>
 
                   <div className="p-5 sm:p-6">
-                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                      <span>Loja {STORE_INFO.numberLabel}</span>
-                      <span aria-hidden="true">·</span>
-                      <span>{STORE_INFO.cityLabel}</span>
-                      <span aria-hidden="true">·</span>
-                      <span>{STORE_INFO.segment}</span>
-                    </div>
-
                     <h1 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 mt-1.5 [text-wrap:balance]">
                       {STORE_INFO.fullName}
                     </h1>
@@ -249,7 +250,7 @@ export default function App() {
                         type="button"
                         onClick={handleHowToGetThereClick}
                         disabled={isLocatingUser}
-                        className="w-full min-h-[48px] px-5 py-3 bg-blue-700 hover:bg-blue-800 disabled:opacity-75 text-white rounded-xl font-semibold text-sm flex items-center justify-center gap-2.5 shadow-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                        className="w-full min-h-[48px] px-5 py-3 bg-black hover:bg-gray-800 disabled:opacity-75 text-white rounded-xl font-semibold text-sm flex items-center justify-center gap-2.5 shadow-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                       >
                         {isLocatingUser ? (
                           <Loader2
@@ -265,7 +266,7 @@ export default function App() {
                         <span className="whitespace-nowrap">
                           {isLocatingUser
                             ? 'Localizando sua posição...'
-                            : 'Como chegar na loja Conduta'}
+                            : 'Como chegar na Peixeweb'}
                         </span>
                       </button>
 
@@ -273,7 +274,7 @@ export default function App() {
                         href={getWhatsAppUrl()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full min-h-[48px] px-5 py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold text-sm flex items-center justify-center gap-2.5 shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                        className="w-full min-h-[48px] px-5 py-3 bg-black hover:bg-gray-800 text-white rounded-xl font-semibold text-sm flex items-center justify-center gap-2.5 shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                       >
                         <MessageCircle
                           className="w-4 h-4 shrink-0"
@@ -290,7 +291,7 @@ export default function App() {
                         href={getGoogleMapsDirectionsUrl(origin, travelMode)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-medium text-blue-700 hover:text-blue-900 hover:underline whitespace-nowrap"
+                        className="inline-flex items-center gap-1.5 font-medium text-black hover:text-black hover:underline whitespace-nowrap"
                       >
                         <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>Abrir rota no Google Maps</span>
@@ -303,7 +304,7 @@ export default function App() {
                         className="inline-flex items-center gap-1.5 font-medium text-slate-600 hover:text-slate-900 hover:underline whitespace-nowrap"
                       >
                         <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
-                        <span>Ver ponto da loja</span>
+                        <span>Ver escritório</span>
                       </a>
                     </div>
                   </div>
@@ -317,7 +318,7 @@ export default function App() {
                   <div className="flex items-center justify-between gap-3 mb-4">
                     <h2 className="font-display text-base font-bold text-slate-900 flex items-center gap-2">
                       <RouteIcon
-                        className="w-4 h-4 text-blue-700"
+                        className="w-4 h-4 text-black"
                         aria-hidden="true"
                       />
                       <span>Planejar rota no mapa</span>
@@ -361,7 +362,7 @@ export default function App() {
                       disabled={isLocatingUser}
                       className="min-h-[42px] px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap"
                     >
-                      <Compass className="w-3.5 h-3.5 text-blue-700 shrink-0" />
+                      <Compass className="w-3.5 h-3.5 text-black shrink-0" />
                       <span>Usar meu GPS</span>
                     </button>
 
@@ -370,7 +371,7 @@ export default function App() {
                       onClick={() => setIsPickingOnMap((prev) => !prev)}
                       className={`min-h-[42px] px-3 py-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap ${
                         isPickingOnMap
-                          ? 'bg-blue-700 text-white'
+                          ? 'bg-black text-white'
                           : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
                       }`}
                     >
@@ -390,7 +391,7 @@ export default function App() {
                   )}
 
                   {isRouteLoading && (
-                    <div className="mt-4 flex items-center gap-2 text-xs text-blue-700 font-medium">
+                    <div className="mt-4 flex items-center gap-2 text-xs text-black font-medium">
                       <Loader2 className="w-4 h-4 animate-spin" />
                       <span>Calculando melhor trajeto no Google Maps...</span>
                     </div>
@@ -425,7 +426,7 @@ export default function App() {
 
                         <div className="text-right">
                           <p className="text-xs text-slate-500">Distância</p>
-                          <p className="font-display font-bold text-xl text-blue-700 font-mono-tabular">
+                          <p className="font-display font-bold text-xl text-black font-mono-tabular">
                             {routeSummary.distanceText}
                           </p>
                         </div>
@@ -462,7 +463,7 @@ export default function App() {
                           href={getGoogleMapsDirectionsUrl(origin, travelMode)}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 hover:text-blue-900 hover:underline whitespace-nowrap"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-black hover:text-black hover:underline whitespace-nowrap"
                         >
                           <span>Iniciar GPS no Google Maps</span>
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -534,16 +535,16 @@ export default function App() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
                 <div>
-                  <p className="text-xs font-semibold text-blue-700">
-                    {STORE_INFO.segment} · Loja {STORE_INFO.numberLabel}
+                  <p className="text-xs font-semibold text-black">
+                    Tráfego Pago · {STORE_INFO.numberLabel}
                   </p>
                   <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mt-1">
-                    Especialidades e Peças na Conduta
+                    Especialista em Meta Ads e Google Ads e Inteligência Artificial
                   </h2>
                 </div>
 
                 <p className="text-sm text-slate-600">
-                  Peças e manutenção para {STORE_INFO.brands.join(' · ')}
+                  Especialista em Meta Ads e Google Ads e Inteligência Artificial
                 </p>
               </div>
 
@@ -553,7 +554,7 @@ export default function App() {
                     key={item.title}
                     className="p-5 rounded-2xl border border-slate-200 bg-slate-50/60"
                   >
-                    <p className="font-mono-tabular text-xs font-semibold text-blue-700">
+                    <p className="font-mono-tabular text-xs font-semibold text-black">
                       0{idx + 1}.
                     </p>
                     <h3 className="font-display font-bold text-base text-slate-900 mt-1">
@@ -574,22 +575,24 @@ export default function App() {
             className="border-t border-slate-200 bg-slate-50 py-12 lg:py-14"
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-blue-900 text-white rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+              <div className="bg-black text-white rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div className="max-w-xl">
                   <p className="text-xs font-semibold text-amber-300">
-                    Atendimento Direto · {STORE_INFO.cityLabel}
+                    Agência de Marketing Digital
                   </p>
                   <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mt-1.5 [text-wrap:balance]">
-                    Precisa de peças, orçamento ou localização exata?
+                    Transforme cliques em clientes com estratégia de tráfego pago.
                   </h2>
-                  <p className="text-sm text-blue-100 mt-2 leading-relaxed">
-                    Envie uma mensagem direta pelo WhatsApp para confirmar
-                    estoque da linha diesel e linha leve ou trace sua rota até a
-                    loja {STORE_INFO.numberLabel}.
+                  <p className="text-sm text-gray-100 mt-2 leading-relaxed">
+                    Fale com nossa equipe pelo WhatsApp para conhecer nossas
+                    soluções de marketing digital e impulsionar seu negócio.
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                  <p className="text-xs font-semibold text-amber-300 whitespace-nowrap">
+                    Peixeweb - Agência de Tráfego &amp; Engenharia de Lucro
+                  </p>
                   <a
                     href={getWhatsAppUrl()}
                     target="_blank"
@@ -603,10 +606,10 @@ export default function App() {
                   <button
                     type="button"
                     onClick={handleHowToGetThereClick}
-                    className="min-h-[48px] px-6 py-3 bg-white hover:bg-blue-50 text-blue-900 rounded-xl font-semibold text-sm inline-flex items-center justify-center gap-2 transition-colors whitespace-nowrap cursor-pointer"
+                    className="min-h-[48px] px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-semibold text-sm inline-flex items-center justify-center gap-2 transition-colors whitespace-nowrap cursor-pointer"
                   >
-                    <Wrench className="w-4 h-4 shrink-0" />
-                    <span>Como chegar na loja Conduta</span>
+                    <img src={etImage} alt="Peixeweb" className="w-5 h-5 shrink-0" />
+                    <span>Como chegar na Peixeweb</span>
                   </button>
                 </div>
               </div>
@@ -618,7 +621,7 @@ export default function App() {
       <footer className="bg-white border-t border-slate-200 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <p>
-            {STORE_INFO.fullName} · Loja {STORE_INFO.numberLabel} ·{' '}
+            {STORE_INFO.fullName} · {STORE_INFO.numberLabel} ·{' '}
             {STORE_INFO.cityLabel}
           </p>
 
@@ -639,9 +642,19 @@ export default function App() {
             >
               Termos do Google Maps
             </a>
+            <a
+              href="https://vendas-pela-internet.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-h-[36px] px-4 py-1.5 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors whitespace-nowrap shrink-0 flex items-center gap-2 cursor-pointer"
+            >
+              <img src={etImage} alt="Peixeweb" className="w-4 h-4 shrink-0" />
+              <span>Vendas Pela Internet</span>
+            </a>
           </div>
         </div>
       </footer>
     </div>
   );
 }
+

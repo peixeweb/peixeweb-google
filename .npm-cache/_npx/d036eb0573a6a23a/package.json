@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@automattic/mcp-wordpress-remote": "^0.5.5"
+  },
+  "_npx": {
+    "packages": [
+      "@automattic/mcp-wordpress-remote@latest"
+    ]
+  }
+}

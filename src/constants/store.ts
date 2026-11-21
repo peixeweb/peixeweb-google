@@ -1,4 +1,4 @@
-import facadePhoto from '../assets/aistudio/fachada_conduta.jpg';
+import etImage from '../../et.png';
 
 export type TravelModeOption = 'DRIVING' | 'TWO_WHEELER' | 'WALKING';
 
@@ -22,43 +22,27 @@ export interface ComputedRouteSummary {
 }
 
 export const STORE_INFO = {
-  shortName: 'Conduta Autopeças',
-  fullName: 'Conduta Locações, Autopeças e Manutenções',
-  numberLabel: '2948C',
-  segment: 'Linha Diesel e Leve',
-  cityLabel: 'Piripiri · PI',
-  position: {lat: -4.3018578, lng: -41.7741535} as LatLngPoint,
-  mapsShareUrl: 'https://maps.app.goo.gl/T7ihomcoQcfvyb9L8',
-  photoUrl: facadePhoto,
-  whatsappNumber: '5586988778884',
-  whatsappDisplay: '55 86 98877-8884',
+  shortName: 'Peixeweb',
+  fullName: 'Peixeweb - Agência de Tráfego & Engenharia de Lucro',
+  numberLabel: '',
+  segment: 'Tráfego Pago',
+  cityLabel: '',
+  position: {lat: -5.1440677, lng: -42.7866605} as LatLngPoint,
+  mapsShareUrl: '',
+  photoUrl: etImage,
+  whatsappNumber: '11914716715',
+  whatsappDisplay: '11 91471-6715',
   specialties: [
     {
-      title: 'Óleos e Lubrificantes',
-      detail: 'Troca e linha completa para motores diesel e linha leve.',
+      title: 'Tráfego Pago',
+      detail: 'Estratégias avançadas para escala de vendas.',
     },
     {
-      title: 'Filtros Automotivos',
-      detail: 'Filtros de óleo, combustível, ar e cabine de alta retenção.',
-    },
-    {
-      title: 'Sistema de Freios',
-      detail: 'Pastilhas, lonas, discos, tambores e componentes pneumáticos.',
-    },
-    {
-      title: 'Suspensão e Rodas',
-      detail: 'Amortecedores, molas, buchas, cubos e rodagem pesada.',
-    },
-    {
-      title: 'Parte Elétrica',
-      detail: 'Alternadores, motores de partida, baterias e iluminação.',
-    },
-    {
-      title: 'Locações e Manutenções',
-      detail: 'Atendimento especializado e suporte técnico para frotas.',
+      title: 'Engenharia de Lucro',
+      detail: 'Otimização focada em resultados.',
     },
   ],
-  brands: ['Toyota', 'Volkswagen', 'CAT', 'Stihl'],
+  brands: [],
 } as const;
 
 export const TRAVEL_MODE_LABELS: Record<TravelModeOption, string> = {
@@ -68,30 +52,14 @@ export const TRAVEL_MODE_LABELS: Record<TravelModeOption, string> = {
 };
 
 export function getWhatsAppUrl(customMessage?: string): string {
-  const defaultMsg =
-    'Olá! Vi a localização da Conduta Locações, Autopeças e Manutenções (2948C) e gostaria de falar com a loja.';
-  const text = encodeURIComponent(customMessage ?? defaultMsg);
-  return `https://wa.me/${STORE_INFO.whatsappNumber}?text=${text}`;
+  return '#';
 }
 
 export function getGoogleMapsDirectionsUrl(
   origin?: LatLngPoint | null,
   travelMode: TravelModeOption = 'DRIVING',
 ): string {
-  const modeMap: Record<TravelModeOption, string> = {
-    DRIVING: 'driving',
-    TWO_WHEELER: 'two-wheeler',
-    WALKING: 'walking',
-  };
-  const params = new URLSearchParams({
-    api: '1',
-    destination: `${STORE_INFO.position.lat},${STORE_INFO.position.lng}`,
-    travelmode: modeMap[travelMode],
-  });
-  if (origin) {
-    params.set('origin', `${origin.lat},${origin.lng}`);
-  }
-  return `https://www.google.com/maps/dir/?${params.toString()}`;
+  return '#';
 }
 
 export function formatDistancePt(meters: number): string {

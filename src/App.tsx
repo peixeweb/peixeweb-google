@@ -15,6 +15,7 @@ import {
 import {OriginAutocomplete} from './components/OriginAutocomplete';
 import {StoreFacadeImage} from './components/StoreFacadeImage';
 import {StoreMap} from './components/StoreMap';
+import {YouTubeEmbed} from './components/YouTubeEmbed';
 import etImage from '../et.png';
 import {
   ComputedRouteSummary,
@@ -27,6 +28,7 @@ import {
 } from './constants/store';
 
 const MAPS_API_KEY = (import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string) || '';
+const PRESENTATION_VIDEO_ID = 'sPk0w5SCJpY';
 
 export default function App() {
   const [quotaExceeded, setQuotaExceeded] = useState(false);
@@ -170,6 +172,12 @@ export default function App() {
               className="hover:text-slate-900 transition-colors whitespace-nowrap shrink-0"
             >
               Traçar rota
+            </a>
+            <a
+              href="#video"
+              className="hover:text-slate-900 transition-colors whitespace-nowrap shrink-0"
+            >
+              Vídeo
             </a>
             <a
               href="#servicos"
@@ -524,6 +532,29 @@ export default function App() {
                   </span>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Video Section */}
+          <section
+            id="video"
+            className="border-t border-slate-200 bg-slate-50 py-12 lg:py-14"
+          >
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-8">
+                <p className="text-xs font-semibold text-black">
+                  Conheça a Peixeweb
+                </p>
+                <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mt-1 [text-wrap:balance]">
+                  Veja como a Peixeweb pode impulsionar o seu negócio
+                </h2>
+              </div>
+
+              <YouTubeEmbed
+                videoId={PRESENTATION_VIDEO_ID}
+                title="Vídeo de apresentação da Peixeweb"
+                className="shadow-xs border border-slate-200"
+              />
             </div>
           </section>
 
